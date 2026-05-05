@@ -1,0 +1,24 @@
+# Ambiente virtual
+.venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Dados secretos do professor
+data/teste_secreto*
+
+# Modelo (binário grande)
+modelo.pkl
+
+# Saídas
+predicoes.csv
+
+# OS
+.DS_Store
+Thumbs.db
