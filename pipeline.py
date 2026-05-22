@@ -1,11 +1,3 @@
-"""
-pipeline.py — script de predição avaliado pelo professor.
-
-Uso:
-    python pipeline.py                       # roda com data/teste_publico.csv
-    python pipeline.py caminho/para/test.csv # roda com arquivo custom
-"""
-
 import sys
 import pathlib
 import numpy as np
@@ -15,7 +7,6 @@ import joblib
 MODEL_PATH = pathlib.Path(__file__).parent / 'modelo.pkl'
 SRC_PATH   = pathlib.Path(__file__).parent / 'src'
 
-# Garante que src/ está no path para importar feature_engineering
 if str(SRC_PATH.parent) not in sys.path:
     sys.path.insert(0, str(SRC_PATH.parent))
 
@@ -30,7 +21,7 @@ def predict(df: pd.DataFrame) -> np.ndarray:
     model = joblib.load(MODEL_PATH)
     X = create_features(df)
     preds = model.predict(X)
-    return np.maximum(preds, 0)  # garante sem valores negativos
+    return np.maximum(preds, 0)  #
 
 
 if __name__ == '__main__':
@@ -39,7 +30,6 @@ if __name__ == '__main__':
     print(f'Carregando dados de: {test_path}')
     test_df = pd.read_csv(test_path)
 
-    # Remove SalePrice se presente (modo de avaliação interna)
     has_truth = 'SalePrice' in test_df.columns
     if has_truth:
         y_true = test_df.pop('SalePrice')

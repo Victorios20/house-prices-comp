@@ -1,0 +1,10 @@
+RESUMO ACOMPANHAMENTO 2
+========================
+Amostras de treino usadas: 1166
+Validacao: KFold 5-fold com random_state=42
+Modelo escolhido: Ridge
+RMSLE: 0.11295
+MAE: $13,657
+R2: 0.9333
+Modelo salvo em: modelo.pkl
+Metricas salvas em: C:\dev\codigos UNIFOR\Ciências de Dados - Tulio\AV2 - Ciencias de dados\house-prices-comp\data\resultados_modelos.csv
